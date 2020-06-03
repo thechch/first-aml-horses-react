@@ -1,0 +1,11 @@
+.Button {
+  background: none;
+  border: none;
+  font: inherit;
+  padding: 0;
+  width: 100%;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
