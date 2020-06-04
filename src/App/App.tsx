@@ -1,9 +1,9 @@
 import React, { FC, useReducer, useCallback } from "react";
 
-import { HorseList } from "./HorseList";
-import { CreateHorse } from "./CreateHorse";
+import { HorseList } from "../HorseList";
+import { CreateHorse } from "../CreateHorse";
 
-import { Horse, State, Reducer, FormValues } from "./types";
+import { Horse, State, Reducer, FormValues } from "../types";
 
 import "./App.css";
 
