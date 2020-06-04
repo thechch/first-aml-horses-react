@@ -3,9 +3,30 @@
   border: none;
   font: inherit;
   padding: 0;
+  margin: 0;
   width: 100%;
+  line-height: 1;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .Button:hover {
   cursor: pointer;
+}
+
+.TextButton {
+  border-radius: 25px;
+  color: #377567;
+  padding: 1em 2em;
+  font-size: 1.25em;
+  width: 16em;
+}
+
+.TextButton:disabled {
+  cursor: not-allowed;
+  color: #95c2b7
+}
+
+.TextButton:hover:not(:disabled) {
+  color: #1f423a;
 }
