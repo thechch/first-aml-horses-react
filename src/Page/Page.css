@@ -8,3 +8,8 @@
 .Header {
   font-size: 1.75em;
 }
+
+.HeaderWrapper {
+  display: flex;
+  justify-content: space-between;
+}
