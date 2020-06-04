@@ -14,7 +14,7 @@ export const Page: FC<PageProps> = ({ children, header }) => (
 );
 
 const Header: FC = ({ children, ...props }) => (
-  <h1 className="Header" {...props}>
+  <h1 {...props} className="Header" data-testid="page-header">
     {children}
   </h1>
 );
