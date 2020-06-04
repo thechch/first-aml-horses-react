@@ -19,3 +19,9 @@ export const TextButton: FC<ButtonProps> = ({ className, ...props }) => {
 
   return <Button {...props} className={compositeClassName} />
 }
+
+export const PrimaryButton: FC<ButtonProps> = ({ className, ...props }) => {
+  const compositeClassName = `PrimaryButton ${className}`;
+
+  return <Button {...props} className={compositeClassName} />
+}

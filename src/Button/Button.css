@@ -15,7 +15,6 @@
 }
 
 .TextButton {
-  border-radius: 25px;
   color: #377567;
   padding: 1em 2em;
   font-size: 1.25em;
@@ -24,9 +23,27 @@
 
 .TextButton:disabled {
   cursor: not-allowed;
-  color: #95c2b7
+  color: #95c2b7;
 }
 
 .TextButton:hover:not(:disabled) {
   color: #1f423a;
+}
+
+.PrimaryButton {
+  border-radius: 25px;
+  background-color: #377567;
+  padding: 1em 2em;
+  font-size: 1.25em;
+  width: 16em;
+  color: #fff;
+}
+
+.PrimaryButton:disabled {
+  cursor: not-allowed;
+  background-color: #95c2b7;
+}
+
+.PrimaryButton:hover:not(:disabled) {
+  background-color: #1f423a;
 }
