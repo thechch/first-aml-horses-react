@@ -1,0 +1,22 @@
+.HorseForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.HorseForm > * {
+  padding-bottom: 1em;
+}
+
+.Input {
+  width: 50%;
+  height: 2.5em;
+  font-size: 1.25em;
+}
+
+.Label {
+  display: flex;
+  flex-direction: column;
+}
+.Error {
+  color: red;
+}
