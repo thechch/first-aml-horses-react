@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect } from "react";
 
 import { Page } from "../Page";
 import { Button, TextButton } from "../Button";
@@ -18,18 +18,23 @@ const text = {
   nextButton: `Next ${NUMBER_OF_HORSES_ON_PAGE} horses`,
   loading: "Loading...",
   loadingFailure: "Can not load horses. Please see console message for details",
+  createHorse: "Create Horse",
 };
 
 type HorseListProps = {
   status: Status;
   horses: State["horses"];
   fetchHorses: VoidFunction;
+  routing: {
+    goToCreatePage: VoidFunction;
+  };
 };
 
 export const HorseList: FC<HorseListProps> = ({
   horses,
   status,
   fetchHorses,
+  routing,
 }) => {
   const isLoading = status === "loading";
   const isLoadingFailure = status === "loadingFailure";
@@ -53,7 +58,17 @@ export const HorseList: FC<HorseListProps> = ({
   } = useClientPagination(NUMBER_OF_HORSES_ON_PAGE, horses);
 
   return (
-    <Page header={text.header}>
+    <Page
+      header={text.header}
+      headerButton={
+        <TextButton
+          data-testid="create-horse-button"
+          onClick={routing.goToCreatePage}
+        >
+          {text.createHorse}
+        </TextButton>
+      }
+    >
       {isLoading && <p>{text.loading}</p>}
       {!isLoading && (
         <HorseListWrapper>
@@ -78,20 +93,24 @@ export const HorseList: FC<HorseListProps> = ({
   );
 };
 
-const HorseListWrapper: FC = ({ children, ...props }) => (
-  <ul {...props} className="HorseListWrapper">
-    {children}
-  </ul>
+const HorseListWrapper: FC = (props) => (
+  <ul
+    {...props}
+    className="HorseListWrapper"
+    data-testid="horse-list-wrapper"
+  />
 );
 
-const HorseListItem: FC = ({ children, ...props }) => (
-  <li {...props} className="HorseListItem" data-testid="horse-list-item">
-    {children}
-  </li>
+const HorseListItem: FC = (props) => (
+  <li {...props} className="HorseListItem" data-testid="horse-list-item" />
 );
 
 const HorseListItemHeader: FC = ({ children, ...props }) => (
-  <h2 {...props} className="HorseListItemHeader">
+  <h2
+    {...props}
+    className="HorseListItemHeader"
+    data-testid="horse-list-item-header"
+  >
     {children}
   </h2>
 );
